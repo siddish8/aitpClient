@@ -1,0 +1,429 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "Service Ability",
+        "description": "An API to check service ability for rogers cable products ",
+        "termsOfService": "https://Rogers.com/terms-of-use",
+        "contact": {
+            "name": "Rogers",
+            "url": "Rogers.com",
+            "email": "neil.wu@rci.rogers.ca"
+        },
+        "license": {
+            "name": "License",
+            "url": "http://license.sample.com"
+        },
+        "version": "0.0.1"
+    },
+    "servers": [
+        {
+            "url": " https://ch-serviceability-qa2.qa01.eks.rogers.com",
+            "description": "Generated server url"
+        }
+    ],
+    "tags": [
+        {
+            "name": "Service ability controller",
+            "description": "Operation for service ability"
+        }
+    ],
+    "paths": {
+        "/v1/cachemanagement/clearcache/samKey/{samKey}": {
+            "get": {
+                "tags": [
+                    "cache-controller"
+                ],
+                "summary": "Cache Management - Clear cache",
+                "description": "Cache Management - Clear cache",
+                "operationId": "clearcache",
+                "parameters": [
+                    {
+                        "name": "samKey",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CacheManagementResult"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/cachemanagement/fetchcache/samKey/{samKey}": {
+            "get": {
+                "tags": [
+                    "cache-controller"
+                ],
+                "summary": "Cache Management - Fetch Cache",
+                "description": "Cache Management - Fetch Cache",
+                "operationId": "fetchcache",
+                "parameters": [
+                    {
+                        "name": "samKey",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CacheManagementResult"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/health": {
+            "get": {
+                "tags": [
+                    "health-check-controller"
+                ],
+                "summary": "Health Check",
+                "description": "Check if the app is running",
+                "operationId": "healthCheck",
+                "responses": {
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HealthState"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/product/serviceability/samKey/{samKey}": {
+            "get": {
+                "tags": [
+                    "Service ability controller"
+                ],
+                "summary": "Check service ability",
+                "description": "Provide service ability",
+                "operationId": "checkAddressBySamKey",
+                "parameters": [
+                    {
+                        "name": "samKey",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "language",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "franchise",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "applicationId",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "sessionId",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "auuid",
+                        "in": "header",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "channel",
+                        "in": "header",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "userType",
+                        "in": "header",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "transactionType",
+                        "in": "header",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Ok",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ServiceabilityResponse"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "No ServiceAddress Information Found for the given SamKey",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Error"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "CacheManagementResult": {
+                "type": "object",
+                "properties": {
+                    "comments": {
+                        "type": "string"
+                    },
+                    "timestamp": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "infoMap": {
+                        "type": "object",
+                        "additionalProperties": {
+                            "type": "string"
+                        }
+                    },
+                    "env": {
+                        "type": "object",
+                        "additionalProperties": {
+                            "type": "string"
+                        }
+                    }
+                }
+            },
+            "HealthState": {
+                "type": "object",
+                "properties": {
+                    "comments": {
+                        "type": "string"
+                    },
+                    "timestamp": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "infoMap": {
+                        "type": "object",
+                        "additionalProperties": {
+                            "type": "string"
+                        }
+                    },
+                    "env": {
+                        "type": "object",
+                        "additionalProperties": {
+                            "type": "string"
+                        }
+                    }
+                }
+            },
+            "AddressInfo": {
+                "type": "object",
+                "properties": {
+                    "areaCode": {
+                        "type": "string"
+                    },
+                    "cableCondition": {
+                        "type": "string"
+                    },
+                    "city": {
+                        "type": "string"
+                    },
+                    "country": {
+                        "type": "string"
+                    },
+                    "rateArea": {
+                        "type": "string"
+                    },
+                    "sessionId": {
+                        "type": "string"
+                    },
+                    "sharedInd": {
+                        "type": "boolean"
+                    },
+                    "streetName": {
+                        "type": "string"
+                    },
+                    "streetNumber": {
+                        "type": "string"
+                    },
+                    "streetNumberSuffix": {
+                        "type": "string"
+                    },
+                    "streetType": {
+                        "type": "string"
+                    },
+                    "streetDirection": {
+                        "type": "string"
+                    },
+                    "postalCode": {
+                        "type": "string"
+                    },
+                    "province": {
+                        "type": "string"
+                    },
+                    "unitNumber": {
+                        "type": "string"
+                    }
+                }
+            },
+            "ServiceabilityResponse": {
+                "type": "object",
+                "properties": {
+                    "addressInfo": {
+                        "$ref": "#/components/schemas/AddressInfo"
+                    },
+                    "addressUniqueID": {
+                        "type": "string"
+                    },
+                    "channelLineup": {
+                        "type": "string"
+                    },
+                    "contractType": {
+                        "type": "string"
+                    },
+                    "errorDescription": {
+                        "type": "string"
+                    },
+                    "gponHSI": {
+                        "type": "boolean"
+                    },
+                    "gponTV": {
+                        "type": "boolean"
+                    },
+                    "reasonCode": {
+                        "type": "string"
+                    },
+                    "rhpServiceable": {
+                        "type": "boolean"
+                    },
+                    "rhpDocsisServiceable": {
+                        "type": "boolean"
+                    },
+                    "rhpGponServiceable": {
+                        "type": "boolean"
+                    },
+                    "serviceAddressID": {
+                        "type": "string"
+                    },
+                    "serviceCode": {
+                        "type": "string"
+                    },
+                    "serviceabilityCode": {
+                        "type": "string"
+                    },
+                    "shmServiceability": {
+                        "type": "string"
+                    },
+                    "shaServiceability": {
+                        "type": "string"
+                    }
+                }
+            },
+            "Error": {
+                "type": "object",
+                "properties": {
+                    "code": {
+                        "type": "string"
+                    },
+                    "serviceName": {
+                        "type": "string"
+                    },
+                    "reason": {
+                        "type": "string"
+                    },
+                    "message": {
+                        "type": "string"
+                    },
+                    "status": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    }
+}

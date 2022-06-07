@@ -1,0 +1,326 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "AI_JAVA_server2 -prod_local",
+    "version": "1.0.0",
+    "contact": {}
+  },
+  "servers": [
+    {
+      "url": "https://devtraceraitest.robotests.com"
+    },
+    {
+      "url": "127.0.01"
+    }
+  ],
+  "paths": {
+    "/Tracer/api/user/Welcome": {
+      "get": {
+        "summary": "app version Copy",
+        "description": "app version Copy",
+        "operationId": "appVersionCopy",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/Tracer/api/user/execute_script": {
+      "post": {
+        "summary": "exec Copy",
+        "description": "exec Copy",
+        "operationId": "execCopy",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "browser": {
+                    "type": "string",
+                    "example": "chrome"
+                  },
+                  "debugMode": {
+                    "type": "number",
+                    "example": 1
+                  },
+                  "executeAll": {
+                    "type": "number",
+                    "example": 1
+                  },
+                  "executePreConditions": {
+                    "type": "number",
+                    "example": 0
+                  },
+                  "execution_id": {
+                    "type": "number",
+                    "example": 523
+                  },
+                  "fileName": {
+                    "type": "string",
+                    "example": "https://devtracerresources.robotests.com/test_select1_3_sp_3_3.xlsx"
+                  },
+                  "os": {
+                    "type": "string",
+                    "example": "windows"
+                  },
+                  "project_id": {
+                    "type": "string",
+                    "example": "83"
+                  },
+                  "tableName": {
+                    "type": "string",
+                    "example": "test_select1_3_sp_3_3"
+                  },
+                  "testCases": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "example": ""
+                    },
+                    "example": [
+                      ""
+                    ]
+                  },
+                  "testsuite_id": {
+                    "type": "string",
+                    "example": "84"
+                  },
+                  "tool": {
+                    "type": "string",
+                    "example": "selenium"
+                  }
+                }
+              },
+              "example": {
+                "browser": "chrome",
+                "debugMode": 1,
+                "executeAll": 1,
+                "executePreConditions": 0,
+                "execution_id": 523,
+                "fileName": "https://devtracerresources.robotests.com/test_select1_3_sp_3_3.xlsx",
+                "os": "windows",
+                "project_id": "83",
+                "tableName": "test_select1_3_sp_3_3",
+                "testCases": [
+                  ""
+                ],
+                "testsuite_id": "84",
+                "tool": "selenium"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/Tracer2/api/user/generate_testdata": {
+      "post": {
+        "summary": "Generate Test Data",
+        "description": "Generate Test Data",
+        "operationId": "generateTestData",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "key": {
+                    "type": "string",
+                    "example": "0"
+                  },
+                  "project_name": {
+                    "type": "string",
+                    "example": "TestPro"
+                  },
+                  "project_version": {
+                    "type": "string",
+                    "example": "1.0"
+                  },
+                  "sprint_name": {
+                    "type": "string",
+                    "example": "Sprint1"
+                  },
+                  "sprint_version": {
+                    "type": "string",
+                    "example": "1.0"
+                  },
+                  "tableName": {
+                    "type": "string",
+                    "example": "TestPro_1_sp_Sprint1_1"
+                  }
+                }
+              },
+              "example": {
+                "key": "0",
+                "project_name": "TestPro",
+                "project_version": "1.0",
+                "sprint_name": "Sprint1",
+                "sprint_version": "1.0",
+                "tableName": "TestPro_1_sp_Sprint1_1"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/Tracer2/api/user/tse_table_track_fetch": {
+      "post": {
+        "summary": "Table_Track_Fetch Copy",
+        "description": "Table_Track_Fetch Copy",
+        "operationId": "tableTrackFetchCopy",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "user": {
+                    "type": "string",
+                    "example": "Tracer"
+                  }
+                }
+              },
+              "example": {
+                "user": "Tracer"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/admin/app": {
+      "get": {
+        "summary": "welcome",
+        "description": "welcome",
+        "operationId": "welcome",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/user/execute_script": {
+      "post": {
+        "summary": "exec",
+        "description": "exec",
+        "operationId": "exec1",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "browser": {
+                    "type": "string",
+                    "example": "chrome"
+                  },
+                  "debugMode": {
+                    "type": "number",
+                    "example": 1
+                  },
+                  "executeAll": {
+                    "type": "number",
+                    "example": 1
+                  },
+                  "executePreConditions": {
+                    "type": "number",
+                    "example": 0
+                  },
+                  "execution_id": {
+                    "type": "number",
+                    "example": 522
+                  },
+                  "fileName": {
+                    "type": "string",
+                    "example": "https://devtracerresources.robotests.com/test_select1_3_sp_3_3.xlsx"
+                  },
+                  "os": {
+                    "type": "string",
+                    "example": "linux"
+                  },
+                  "project_id": {
+                    "type": "string",
+                    "example": "83"
+                  },
+                  "tableName": {
+                    "type": "string",
+                    "example": "test_select1_3_sp_3_3"
+                  },
+                  "testCases": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "example": ""
+                    },
+                    "example": [
+                      ""
+                    ]
+                  },
+                  "testsuite_id": {
+                    "type": "string",
+                    "example": "84"
+                  },
+                  "tool": {
+                    "type": "string",
+                    "example": "selenium"
+                  }
+                }
+              },
+              "example": {
+                "browser": "chrome",
+                "debugMode": 1,
+                "executeAll": 1,
+                "executePreConditions": 0,
+                "execution_id": 522,
+                "fileName": "https://devtracerresources.robotests.com/test_select1_3_sp_3_3.xlsx",
+                "os": "linux",
+                "project_id": "83",
+                "tableName": "test_select1_3_sp_3_3",
+                "testCases": [
+                  ""
+                ],
+                "testsuite_id": "84",
+                "tool": "selenium"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/user/get_execution_id": {
+      "get": {
+        "summary": "get_exec_id",
+        "description": "get_exec_id",
+        "operationId": "getExecId",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    }
+  },
+  "tags": []
+}
