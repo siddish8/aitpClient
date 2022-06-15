@@ -19,10 +19,10 @@
     <a href="select.php"><strong>Select</strong></a> - control
   </li>
   <li>
-    <a href="tab1.php"><strong>Tab</strong></a> - 1
+    <a href="tab1.php"><strong>Tob</strong></a> - 1
   </li>
   <li>
-    <a href="tab2.php"><strong>Tab</strong></a> - 2
+    <a href="tab2.php"><strong>Tob</strong></a> - 2
   </li>
 </ul>
 
