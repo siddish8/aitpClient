@@ -16,7 +16,7 @@
     <a href="check.php"><strong>Check</strong></a> - controls
   </li>
   <li>
-    <a href="select.php"><strong>Select</strong></a> - control
+    <a href="select.php"><strong>Select</strong></a> - controls
   </li>
   <li>
     <a href="tab1.php"><strong>Tab</strong></a> - 1
