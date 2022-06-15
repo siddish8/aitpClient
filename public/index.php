@@ -22,7 +22,7 @@
     <a href="tab1.php"><strong>Tob</strong></a> - 1
   </li>
   <li>
-    <a href="tab2.php"><strong>Tob</strong></a> - 2
+    <a href="tab2.php"><strong>Tob</strong></a> - 3
   </li>
 </ul>
 
